@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import TechStack from "@/components/TechStack";
 import Projects from "@/components/Projects";
+import Experience from "@/components/Experience";
 
 export default function Home() {
   return (
@@ -14,21 +15,7 @@ export default function Home() {
         <About />
         <TechStack />
         <Projects />
-
-        <section
-          id="experience"
-          className="section min-h-[500px]"
-        >
-          <div className="container">
-            <div className="technical-label">
-              04 — Experience
-            </div>
-
-            <h2 className="mt-8 text-4xl font-semibold text-white md:text-6xl">
-              Experience
-            </h2>
-          </div>
-        </section>
+        <Experience />
 
         <section
           id="contact"
