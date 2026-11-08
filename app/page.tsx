@@ -4,6 +4,8 @@ import About from "@/components/About";
 import TechStack from "@/components/TechStack";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -16,22 +18,10 @@ export default function Home() {
         <TechStack />
         <Projects />
         <Experience />
-
-        <section
-          id="contact"
-          className="section min-h-[500px]"
-        >
-          <div className="container">
-            <div className="technical-label">
-              05 — Contact
-            </div>
-
-            <h2 className="mt-8 text-4xl font-semibold text-white md:text-6xl">
-              Let&apos;s work together.
-            </h2>
-          </div>
-        </section>
+        <Contact />
       </main>
+
+      <Footer />
     </>
   );
 }
