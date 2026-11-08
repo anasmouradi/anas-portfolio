@@ -84,13 +84,10 @@ export default function Footer() {
         {/* Sub-footer copyright */}
         <div className="mt-8 pt-6 border-t border-[#1d293d] flex flex-col sm:flex-row items-center justify-between gap-4 font-mono-code text-[11px] text-[#90a1b9]">
           <p>
-            © {new Date().getFullYear()} Anas Mouradi. All rights reserved.
+            <span>© 2026 Anas Mouradi</span>
           </p>
 
-          <p className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00dc82]" />
-            <span>Nuxt Terminal Dark Theme · Next.js &amp; Tailwind CSS</span>
-          </p>
+          
         </div>
 
       </div>

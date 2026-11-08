@@ -143,7 +143,7 @@ export default function Hero() {
               {/* Code Snippet Body */}
               <div className="p-5 font-mono-code text-xs leading-6 text-[#90a1b9] overflow-x-auto space-y-1">
                 <div>
-                  <span className="text-[#314158]">// Software Engineer Profile</span>
+                  <span className="text-[#314158]">{"// Software Engineer Profile"}</span>
                 </div>
                 <div>
                   <span className="text-[#00dc82]">export const</span>{" "}

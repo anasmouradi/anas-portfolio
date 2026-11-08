@@ -284,7 +284,7 @@ export default async function ProjectPage({
           <Link href="/#work" className="hover:text-[#00dc82] transition-colors">
             ← Return to Selected Work
           </Link>
-          <span>© {new Date().getFullYear()} Anas Mouradi · Nuxt Style Spec</span>
+          <span>© 2026 Anas Mouradi · Nuxt Style Spec</span>
         </div>
       </footer>
 
