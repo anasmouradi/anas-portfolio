@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 
 export default function About() {
   return (
@@ -14,7 +14,7 @@ export default function About() {
 
           {/* Main content */}
           <div>
-            <h2 className="max-w-4xl text-4xl font-semibold leading-tight tracking-[-0.04em] md:text-6xl">
+            <h2 className="max-w-4xl text-4xl font-semibold leading-tight tracking-[-0.04em] md:text-6xl text-white">
               I build software
               <br />
               <span className="text-zinc-500">
@@ -24,34 +24,47 @@ export default function About() {
 
             <div className="mt-8 max-w-2xl space-y-5 text-base leading-8 text-zinc-400">
               <p>
-                I&apos;m Anas Mouradi, a Software Engineer focused on
-                building modern web applications and digital solutions.
+                I&apos;m Anas Mouradi, a Software Engineer and Full-Stack Developer
+                focused on building modern web applications, scalable architectures and digital solutions.
               </p>
 
               <p>
-                My experience spans the full development lifecycle —
-                from backend architecture and REST APIs to responsive
-                interfaces, databases and deployment.
+                My experience spans the full development lifecycle — from backend
+                APIs (Java, Spring Boot, Node.js) to responsive user interfaces (React, Next.js),
+                databases, computer vision pipelines and cloud deployment.
               </p>
 
               <p>
-                I enjoy turning complex technical problems into
-                simple, reliable and maintainable products.
+                I enjoy turning complex business requirements into simple, reliable
+                and maintainable software products.
               </p>
             </div>
 
-            {/* CTA */}
-            <a
-              href="#contact"
-              className="group mt-10 inline-flex items-center border-b border-zinc-700 pb-2 font-mono text-[11px] uppercase tracking-[0.15em] text-zinc-300 transition-colors hover:border-violet-500 hover:text-white"
-            >
-              Let&apos;s work together
+            {/* CTA Buttons */}
+            <div className="mt-10 flex flex-wrap items-center gap-6">
+              <a
+                href="#contact"
+                className="group inline-flex items-center border-b border-zinc-700 pb-2 font-mono text-[11px] uppercase tracking-[0.15em] text-zinc-300 transition-colors hover:border-violet-500 hover:text-white"
+              >
+                Let&apos;s work together
+                <ArrowUpRight
+                  size={14}
+                  className="ml-2 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                />
+              </a>
 
-              <ArrowUpRight
-                size={14}
-                className="ml-2 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-              />
-            </a>
+              <a
+                href="/cv/Anas-Mouradi-CV.pdf"
+                download
+                className="group inline-flex items-center border-b border-zinc-700 pb-2 font-mono text-[11px] uppercase tracking-[0.15em] text-zinc-300 transition-colors hover:border-violet-500 hover:text-white"
+              >
+                Download CV (PDF)
+                <Download
+                  size={14}
+                  className="ml-2 transition-transform group-hover:translate-y-0.5 text-violet-400"
+                />
+              </a>
+            </div>
           </div>
 
           {/* Profile information */}
@@ -60,7 +73,7 @@ export default function About() {
 
               <div className="border-b border-zinc-800 px-6 py-5">
                 <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-zinc-600">
-                  Profile
+                  Profile &amp; Credentials
                 </span>
               </div>
 
@@ -68,12 +81,17 @@ export default function About() {
 
                 <InfoRow
                   label="Role"
-                  value="Software Engineer"
+                  value="Software Engineer — Full Stack"
                 />
 
                 <InfoRow
-                  label="Focus"
-                  value="Full Stack Development"
+                  label="Degree"
+                  value="Ingénieur d'État en Génie Logiciel"
+                />
+
+                <InfoRow
+                  label="School"
+                  value="ESTEM, Casablanca"
                 />
 
                 <InfoRow
@@ -82,13 +100,13 @@ export default function About() {
                 />
 
                 <InfoRow
-                  label="Education"
-                  value="Software Engineering"
+                  label="Languages"
+                  value="Arabe / Français / Anglais"
                 />
 
                 <InfoRow
-                  label="Languages"
-                  value="Arabic / French / English"
+                  label="Status"
+                  value="Available for Opportunities"
                 />
 
               </div>

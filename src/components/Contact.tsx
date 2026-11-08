@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Send, CheckCircle2, ArrowUpRight, Github, Linkedin, Copy, Check } from "lucide-react";
+import { Mail, MapPin, Phone, Send, CheckCircle2, ArrowUpRight, Github, Linkedin, Copy, Check } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -247,6 +247,24 @@ export default function Contact() {
                   <span className="text-sm text-zinc-300 font-medium">
                     Casablanca, Morocco — Open to Remote
                   </span>
+                </div>
+              </div>
+
+              {/* Phone */}
+              <div className="flex items-start gap-3 pt-1">
+                <div className="p-2 rounded-lg border border-zinc-800 bg-zinc-950/40 text-violet-400">
+                  <Phone className="w-4 h-4" />
+                </div>
+                <div>
+                  <span className="font-mono text-[11px] text-zinc-500 uppercase tracking-wider block">
+                    Phone
+                  </span>
+                  <a
+                    href="tel:+212659157983"
+                    className="text-sm text-zinc-300 font-medium hover:text-white transition-colors"
+                  >
+                    +212 659157983
+                  </a>
                 </div>
               </div>
 
