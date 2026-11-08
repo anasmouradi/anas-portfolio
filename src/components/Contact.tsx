@@ -23,7 +23,7 @@ export default function Contact() {
   };
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText("nsmodric@gmail.com");
+    navigator.clipboard.writeText("mouradianas90@gmail.com");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -217,9 +217,12 @@ export default function Contact() {
                 <div className="flex items-center justify-between gap-3 p-3.5 rounded-lg border border-zinc-800 bg-zinc-950/40">
                   <div className="flex items-center gap-2.5 truncate">
                     <Mail className="w-4 h-4 text-violet-400 shrink-0" />
-                    <span className="text-sm font-medium text-white truncate">
-                      nsmodric@gmail.com
-                    </span>
+                    <a
+                      href="mailto:mouradianas90@gmail.com"
+                      className="text-sm font-medium text-white hover:text-violet-400 transition-colors truncate"
+                    >
+                      mouradianas90@gmail.com
+                    </a>
                   </div>
 
                   <button
