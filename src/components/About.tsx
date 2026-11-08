@@ -1,83 +1,75 @@
-import { ArrowUpRight, Download } from "lucide-react";
+import { ArrowUpRight, Download, CheckCircle2 } from "lucide-react";
 
 export default function About() {
   return (
-    <section id="about" className="section border-t border-zinc-900">
+    <section id="about" className="section border-b border-[#1d293d] bg-[#020618]">
       <div className="container">
 
         {/* Section header */}
-        <div className="technical-label">
-          01 — About
+        <div className="technical-label mb-8">
+          01 — About &amp; Engineering Profile
         </div>
 
-        <div className="mt-12 grid gap-16 lg:grid-cols-[1.2fr_0.8fr]">
+        <div className="grid gap-16 lg:grid-cols-[1.2fr_0.8fr] items-start">
 
           {/* Main content */}
-          <div>
-            <h2 className="max-w-4xl text-4xl font-semibold leading-tight tracking-[-0.04em] md:text-6xl text-white">
-              I build software
-              <br />
-              <span className="text-zinc-500">
-                with purpose.
-              </span>
+          <div className="space-y-6">
+            <h2 className="text-3xl sm:text-5xl font-bold tracking-[-1.2px] text-white leading-tight">
+              Software engineering <br />
+              <span className="text-[#00dc82]">built for performance.</span>
             </h2>
 
-            <div className="mt-8 max-w-2xl space-y-5 text-base leading-8 text-zinc-400">
+            <div className="space-y-4 text-base leading-relaxed text-[#90a1b9] max-w-2xl">
               <p>
-                I&apos;m Anas Mouradi, a Software Engineer and Full-Stack Developer
-                focused on building modern web applications, scalable architectures and digital solutions.
+                I am <strong className="text-white">Anas Mouradi</strong>, an Ingénieur d&apos;État in Software Engineering
+                and Full-Stack Developer based in Casablanca, Morocco.
               </p>
 
               <p>
-                My experience spans the full development lifecycle — from backend
-                APIs (Java, Spring Boot, Node.js) to responsive user interfaces (React, Next.js),
-                databases, computer vision pipelines and cloud deployment.
+                My expertise spans the entire software lifecycle: from architecting low-latency backend
+                microservices (Java, Spring Boot, Node.js, PHP/Laravel) to designing responsive and intuitive
+                interfaces (React, Next.js, Angular, Tailwind CSS), database modeling, and automated computer vision pipelines.
               </p>
 
               <p>
-                I enjoy turning complex business requirements into simple, reliable
-                and maintainable software products.
+                Whether building centralized fleet management systems (MDM), automated OCR pipelines,
+                or e-commerce applications, I emphasize clean architecture, strict type safety, and maintainable systems.
               </p>
             </div>
 
             {/* CTA Buttons */}
-            <div className="mt-10 flex flex-wrap items-center gap-6">
+            <div className="pt-4 flex flex-wrap items-center gap-4">
               <a
                 href="#contact"
-                className="group inline-flex items-center border-b border-zinc-700 pb-2 font-mono text-[11px] uppercase tracking-[0.15em] text-zinc-300 transition-colors hover:border-violet-500 hover:text-white"
+                className="btn-nuxt-signal text-sm"
               >
-                Let&apos;s work together
-                <ArrowUpRight
-                  size={14}
-                  className="ml-2 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                />
+                <span>Let&apos;s work together</span>
+                <ArrowUpRight size={15} className="ml-2 stroke-[2.5]" />
               </a>
 
               <a
                 href="/cv/Anas-Mouradi-CV.pdf"
                 download
-                className="group inline-flex items-center border-b border-zinc-700 pb-2 font-mono text-[11px] uppercase tracking-[0.15em] text-zinc-300 transition-colors hover:border-violet-500 hover:text-white"
+                className="btn-dark-outline text-sm"
               >
-                Download CV (PDF)
-                <Download
-                  size={14}
-                  className="ml-2 transition-transform group-hover:translate-y-0.5 text-violet-400"
-                />
+                <Download size={14} className="mr-2 text-[#00dc82]" />
+                <span>Download Resume (PDF)</span>
               </a>
             </div>
           </div>
 
-          {/* Profile information */}
-          <div className="lg:pt-2">
-            <div className="border border-zinc-800 bg-zinc-950/50">
+          {/* Profile information — Midnight Panel */}
+          <div>
+            <div className="rounded-[8px] border border-[#1d293d] bg-[#080e21] overflow-hidden">
 
-              <div className="border-b border-zinc-800 px-6 py-5">
-                <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-zinc-600">
-                  Profile &amp; Credentials
+              <div className="border-b border-[#1d293d] bg-[#0f172b] px-6 py-4 flex items-center justify-between">
+                <span className="font-mono-code text-xs uppercase tracking-wider text-[#00dc82] font-semibold">
+                  credentials.json
                 </span>
+                <span className="flex h-2 w-2 rounded-full bg-[#00dc82]" />
               </div>
 
-              <div className="divide-y divide-zinc-800">
+              <div className="divide-y divide-[#1d293d]">
 
                 <InfoRow
                   label="Role"
@@ -86,32 +78,44 @@ export default function About() {
 
                 <InfoRow
                   label="Degree"
-                  value="Ingénieur d'État en Génie Logiciel"
+                  value="Diplôme d'Ingénieur d'État en Génie Logiciel"
                 />
 
                 <InfoRow
-                  label="School"
-                  value="ESTEM, Casablanca"
+                  label="Institution"
+                  value="ESTEM, Casablanca (2021 – 2026)"
                 />
 
                 <InfoRow
                   label="Location"
-                  value="Casablanca, Morocco"
+                  value="Casablanca, Morocco (Open to Remote)"
+                />
+
+                <InfoRow
+                  label="Email"
+                  value="mouradianas90@gmail.com"
+                />
+
+                <InfoRow
+                  label="Phone"
+                  value="+212 659157983"
                 />
 
                 <InfoRow
                   label="Languages"
-                  value="Arabe / Français / Anglais"
+                  value="Arabe (Maternelle) / Français / Anglais"
                 />
 
                 <InfoRow
                   label="Status"
-                  value="Available for Opportunities"
+                  value="Available for Full-Time / Contract"
+                  highlight
                 />
 
               </div>
             </div>
           </div>
+
         </div>
 
       </div>
@@ -122,17 +126,23 @@ export default function About() {
 function InfoRow({
   label,
   value,
+  highlight = false,
 }: {
   label: string;
   value: string;
+  highlight?: boolean;
 }) {
   return (
-    <div className="flex items-start justify-between gap-6 px-6 py-5">
-      <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-600">
+    <div className="flex items-start justify-between gap-6 px-6 py-4">
+      <span className="font-mono-code text-[11px] uppercase tracking-wider text-[#90a1b9] shrink-0">
         {label}
       </span>
 
-      <span className="text-right text-sm text-zinc-300">
+      <span
+        className={`text-right text-xs sm:text-sm font-medium ${
+          highlight ? "text-[#00dc82] font-semibold" : "text-[#e2e8f0]"
+        }`}
+      >
         {value}
       </span>
     </div>

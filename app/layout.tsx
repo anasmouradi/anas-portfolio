@@ -1,23 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: "Anas Mouradi — Software Engineer",
+  title: "Anas Mouradi — Full-Stack Software Engineer",
   description:
-    "Portfolio of Anas Mouradi, Full-Stack Software Engineer specializing in Java, Spring Boot, React and modern web technologies.",
+    "Engineering portfolio of Anas Mouradi, Software Engineer specializing in modern scalable platforms, Java, Spring Boot, React, and cloud architectures.",
 };
 
 export default function RootLayout({
@@ -26,10 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
-      >
+    <html lang="en" className="dark scroll-smooth">
+      <body className="bg-[#020618] text-[#90a1b9] antialiased selection:bg-[#00dc82]/20 selection:text-white font-sans">
         {children}
       </body>
     </html>

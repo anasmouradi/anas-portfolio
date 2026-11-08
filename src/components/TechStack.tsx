@@ -80,7 +80,7 @@ const TECH_ICONS: Record<string, TechItem> = {
   },
   WebSocket: {
     name: "WebSocket",
-    color: "#F59E0B",
+    color: "#00dc82",
     svg: (
       <svg viewBox="0 0 24 24" className="w-4 h-4 fill-none stroke-current stroke-2">
         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -206,7 +206,7 @@ const TECH_ICONS: Record<string, TechItem> = {
   },
   "CI/CD": {
     name: "CI/CD",
-    color: "#10B981",
+    color: "#00dc82",
     svg: (
       <svg viewBox="0 0 24 24" className="w-4 h-4 fill-none stroke-current stroke-2">
         <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83" />
@@ -218,8 +218,8 @@ const TECH_ICONS: Record<string, TechItem> = {
 const categories = [
   {
     icon: Server,
-    title: "Backend",
-    description: "APIs, services & application logic",
+    title: "Backend Services",
+    description: "APIs, microservices & application logic",
     technologies: [
       "Java",
       "Spring Boot",
@@ -233,8 +233,8 @@ const categories = [
   },
   {
     icon: Globe,
-    title: "Frontend",
-    description: "Modern interfaces & web applications",
+    title: "Frontend Engineering",
+    description: "Modern interfaces, SPA/SSR & design systems",
     technologies: [
       "React",
       "Next.js",
@@ -246,8 +246,8 @@ const categories = [
   },
   {
     icon: Database,
-    title: "Database",
-    description: "Data modeling & persistence",
+    title: "Database Architecture",
+    description: "Relational modeling, NoSQL & data persistence",
     technologies: [
       "MySQL",
       "PostgreSQL",
@@ -257,8 +257,8 @@ const categories = [
   },
   {
     icon: Terminal,
-    title: "DevOps",
-    description: "Development & deployment workflow",
+    title: "DevOps & Workflow",
+    description: "Containerization, Git workflows & automated CI/CD",
     technologies: [
       "Docker",
       "Git",
@@ -269,65 +269,79 @@ const categories = [
 
 export default function TechStack() {
   return (
-    <section className="section border-t border-zinc-900">
+    <section id="toolbox" className="section border-b border-[#1d293d] bg-[#020618]">
       <div className="container">
 
-        <div className="technical-label">
-          02 — Toolbox
+        {/* Section header */}
+        <div className="technical-label mb-8">
+          02 — Toolbox &amp; Technology Stack
         </div>
 
-        <div className="mt-12 grid gap-4 md:grid-cols-2">
-          {categories.map((category) => {
+        <div className="mb-12">
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-[-1.2px] text-white">
+            Core stack &amp;{" "}
+            <span className="text-[#00dc82]">technical competencies.</span>
+          </h2>
+          <p className="mt-4 text-base text-[#90a1b9] max-w-2xl leading-relaxed">
+            Technologies and frameworks utilized in enterprise production environments,
+            from high-throughput backend services to reactive web applications.
+          </p>
+        </div>
+
+        {/* 4 Cards Grid — Midnight Panel with 1px Steel Outline */}
+        <div className="grid gap-6 md:grid-cols-2">
+          {categories.map((category, idx) => {
             const Icon = category.icon;
 
             return (
               <div
                 key={category.title}
-                className="group border border-zinc-800 bg-zinc-950/40 p-7 transition-all duration-300 hover:border-zinc-700 hover:bg-zinc-900/40"
+                className="rounded-[8px] border border-[#1d293d] bg-[#080e21] p-7 transition-all duration-200 hover:border-[#314158] hover:bg-[#0c132c]"
               >
                 <div className="flex items-start justify-between">
-                  <div>
-                    <div className="mb-5 flex h-10 w-10 items-center justify-center border border-zinc-800 text-zinc-500 transition-colors group-hover:border-violet-500/50 group-hover:text-violet-400">
-                      <Icon size={17} strokeWidth={1.5} />
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-[6px] border border-[#1d293d] bg-[#0f172b] text-[#00dc82]">
+                      <Icon size={18} strokeWidth={2} />
                     </div>
 
-                    <h3 className="text-lg font-medium text-white">
-                      {category.title}
-                    </h3>
-
-                    <p className="mt-2 text-sm text-zinc-600">
-                      {category.description}
-                    </p>
+                    <div>
+                      <h3 className="text-base font-semibold text-white">
+                        {category.title}
+                      </h3>
+                      <p className="text-xs text-[#90a1b9]">
+                        {category.description}
+                      </p>
+                    </div>
                   </div>
 
-                  <span className="font-mono text-[10px] text-zinc-700">
-                    {String(categories.indexOf(category) + 1).padStart(2, "0")}
+                  <span className="font-mono-code text-[11px] text-[#314158] font-bold">
+                    0{idx + 1}
                   </span>
                 </div>
 
-                <div className="mt-8 flex flex-wrap gap-2.5">
+                <div className="mt-7 flex flex-wrap gap-2.5">
                   {category.technologies.map((techName) => {
                     const tech = TECH_ICONS[techName];
                     return (
                       <div
                         key={techName}
                         className="
-                          group/tech flex items-center gap-2
-                          rounded-lg border border-zinc-800
-                          bg-zinc-900/50 px-3 py-1.5
-                          transition-all duration-200
-                          hover:border-zinc-700 hover:bg-zinc-800/60 hover:scale-[1.02]
+                          flex items-center gap-2
+                          rounded-[6px] border border-[#1d293d]
+                          bg-[#020618] px-3 py-1.5
+                          transition-all duration-150
+                          hover:border-[#00dc82] hover:bg-[#0f172b]
                         "
                       >
                         {tech?.svg && (
                           <div
-                            className="shrink-0 transition-transform duration-200 group-hover/tech:scale-110"
+                            className="shrink-0 transition-transform"
                             style={{ color: tech.color }}
                           >
                             {tech.svg}
                           </div>
                         )}
-                        <span className="font-mono text-[10px] uppercase tracking-wider text-zinc-400 group-hover/tech:text-white transition-colors">
+                        <span className="font-mono-code text-[11px] text-[#e2e8f0] font-medium">
                           {techName}
                         </span>
                       </div>

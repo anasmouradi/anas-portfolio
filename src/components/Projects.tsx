@@ -1,227 +1,98 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { projects } from "@/data/projects";
 
 export default function Projects() {
   return (
-    <section id="work" className="section">
+    <section id="work" className="section border-b border-[#1d293d] bg-[#020618]">
       <div className="container">
 
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6 }}
-          className="mb-20 flex flex-col justify-between gap-8 md:flex-row md:items-end"
-        >
+        {/* Section Header */}
+        <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
             <div className="technical-label mb-6">
-              03 — Selected Work
+              03 — Selected Work &amp; Case Studies
             </div>
 
-            <h2 className="max-w-3xl text-4xl font-semibold tracking-[-0.04em] text-white md:text-6xl">
-              Things I&apos;ve
-              <br />
-              <span className="text-zinc-500">built.</span>
+            <h2 className="max-w-3xl text-3xl sm:text-5xl font-bold tracking-[-1.2px] text-white">
+              Engineered solutions &amp; <br />
+              <span className="text-[#00dc82]">product platforms.</span>
             </h2>
           </div>
 
-          <p className="max-w-md text-sm leading-7 text-zinc-500 md:text-right">
-            A selection of projects focused on solving real problems through
-            modern software architecture, clean interfaces and reliable
-            technology.
+          <p className="max-w-md text-sm leading-relaxed text-[#90a1b9] md:text-right">
+            Featured applications focusing on enterprise fleet administration,
+            computer vision OCR pipelines, and high-conversion e-commerce systems.
           </p>
-        </motion.div>
+        </div>
 
-        {/* Projects */}
-        <div className="space-y-8">
+        {/* Projects List */}
+        <div className="space-y-6">
           {projects.map((project, index) => (
-            <ProjectCard
+            <Link
               key={project.slug}
-              project={project}
-              index={index}
-            />
+              href={`/projects/${project.slug}`}
+              className="group block rounded-[8px] border border-[#1d293d] bg-[#080e21] p-7 md:p-9 transition-all duration-200 hover:border-[#00dc82] hover:bg-[#0c132c]"
+            >
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+                
+                <div className="space-y-4 max-w-3xl">
+                  {/* Category & Number badge */}
+                  <div className="flex items-center gap-3">
+                    <span className="font-mono-code text-xs font-bold text-[#00dc82]">
+                      0{index + 1}
+                    </span>
+                    <span className="text-xs font-mono-code text-[#314158]">/</span>
+                    <span className="font-mono-code text-xs text-[#90a1b9] uppercase tracking-wider">
+                      {project.category}
+                    </span>
+                    <span className="hidden sm:inline-block text-xs font-mono-code text-[#314158]">·</span>
+                    <span className="hidden sm:inline-block font-mono-code text-xs text-[#90a1b9]">
+                      {project.timeline}
+                    </span>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white group-hover:text-[#00dc82] transition-colors">
+                    {project.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-sm sm:text-base leading-relaxed text-[#90a1b9]">
+                    {project.description}
+                  </p>
+
+                  {/* Technologies tags */}
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {project.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-[4px] border border-[#1d293d] bg-[#020618] px-2.5 py-1 font-mono-code text-[10px] text-[#e2e8f0]"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right Arrow Action */}
+                <div className="flex items-center gap-3 shrink-0 self-start lg:self-center">
+                  <span className="hidden lg:inline-block text-xs font-mono-code text-[#90a1b9] group-hover:text-white transition-colors">
+                    View Case Study
+                  </span>
+                  <div className="flex h-11 w-11 items-center justify-center rounded-[6px] border border-[#1d293d] bg-[#020618] text-[#90a1b9] group-hover:border-[#00dc82] group-hover:bg-[#00dc82] group-hover:text-[#0f172b] transition-all">
+                    <ArrowUpRight size={18} className="stroke-[2.5]" />
+                  </div>
+                </div>
+
+              </div>
+            </Link>
           ))}
         </div>
 
       </div>
     </section>
-  );
-}
-
-function ProjectCard({
-  project,
-  index,
-}: {
-  project: (typeof projects)[number];
-  index: number;
-}) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{
-        duration: 0.6,
-        delay: index * 0.08,
-      }}
-    >
-      <Link
-        href={`/projects/${project.slug}`}
-        className="group block"
-      >
-        <article
-          className={`
-            relative overflow-hidden rounded-2xl border border-zinc-800
-            bg-[#111111] transition-all duration-500
-            hover:border-zinc-600 hover:bg-[#141414]
-            ${project.featured ? "min-h-[620px]" : "min-h-[480px]"}
-          `}
-        >
-
-          {/* Background grid */}
-          <div className="absolute inset-0 opacity-[0.035]">
-            <div
-              className="h-full w-full"
-              style={{
-                backgroundImage:
-                  "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
-                backgroundSize: "40px 40px",
-              }}
-            />
-          </div>
-
-          {/* Purple glow */}
-          <div
-            className="
-              absolute -right-40 -top-40
-              h-96 w-96 rounded-full
-              bg-violet-600/10 blur-[120px]
-              transition-all duration-700
-              group-hover:bg-violet-600/20
-            "
-          />
-
-          <div className="relative z-10 flex h-full min-h-inherit flex-col p-7 md:p-10 lg:p-12">
-
-            {/* Top */}
-            <div className="flex items-start justify-between gap-6">
-              <div className="flex items-center gap-4">
-                <span className="font-mono text-xs text-zinc-600">
-                  {project.number}
-                </span>
-
-                <span className="h-px w-8 bg-zinc-700" />
-
-                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500">
-                  {project.category}
-                </span>
-              </div>
-
-              <div
-                className="
-                  flex h-11 w-11 shrink-0 items-center justify-center
-                  rounded-full border border-zinc-800
-                  transition-all duration-300
-                  group-hover:border-violet-500/50
-                  group-hover:bg-violet-500/10
-                "
-              >
-                <ArrowUpRight
-                  size={18}
-                  className="
-                    text-zinc-500 transition-all duration-300
-                    group-hover:-translate-y-0.5
-                    group-hover:translate-x-0.5
-                    group-hover:text-violet-400
-                  "
-                />
-              </div>
-            </div>
-
-            {/* Main */}
-            <div className="mt-auto grid gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-end">
-
-              {/* Title + description */}
-              <div>
-                <h3
-                  className="
-                    max-w-3xl
-                    text-4xl font-semibold tracking-[-0.04em]
-                    text-white
-                    transition-colors duration-300
-                    group-hover:text-violet-100
-                    md:text-6xl
-                  "
-                >
-                  {project.title}
-                </h3>
-
-                <p className="mt-6 max-w-xl text-sm leading-7 text-zinc-500">
-                  {project.description}
-                </p>
-
-                {/* Technologies */}
-                <div className="mt-8 flex flex-wrap gap-2">
-                  {project.technologies.map((technology) => (
-                    <span
-                      key={technology}
-                      className="
-                        rounded-full border border-zinc-800
-                        bg-zinc-900/50 px-3 py-1.5
-                        font-mono text-[10px]
-                        uppercase tracking-wider
-                        text-zinc-500
-                      "
-                    >
-                      {technology}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Features */}
-              <div className="hidden lg:block">
-                <div className="border-l border-zinc-800 pl-8">
-                  <p className="mb-5 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-600">
-                    Key capabilities
-                  </p>
-
-                  <div className="space-y-3">
-                    {project.features.slice(0, 4).map((feature) => (
-                      <div
-                        key={feature}
-                        className="flex items-center gap-3 text-xs text-zinc-500"
-                      >
-                        <span className="h-1 w-1 rounded-full bg-violet-500" />
-                        {feature}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            {/* Bottom */}
-            <div className="mt-10 flex items-center justify-between border-t border-zinc-800 pt-5">
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-600">
-                View case study
-              </span>
-
-              <ExternalLink
-                size={14}
-                className="text-zinc-600 transition-colors group-hover:text-violet-400"
-              />
-            </div>
-
-          </div>
-        </article>
-      </Link>
-    </motion.div>
   );
 }

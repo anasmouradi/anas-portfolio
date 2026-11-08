@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUp, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowUp, Github, Linkedin, Terminal } from "lucide-react";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -8,52 +8,56 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-zinc-900 bg-[#0a0a0a] py-14">
+    <footer className="border-t border-[#1d293d] bg-[#020618] py-12">
       <div className="container">
         
         {/* Main Footer Row */}
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-center">
           
           {/* Brand info */}
-          <div className="space-y-2">
-            <a
-              href="#top"
-              className="font-mono text-base font-semibold tracking-tight text-white"
-            >
-              ANAS<span className="text-violet-500">.</span>
-            </a>
-            <p className="text-xs text-zinc-500 max-w-sm">
-              Full-Stack Software Engineer specializing in modern scalable web
-              applications, Java, Spring Boot and React.
-            </p>
+          <div className="flex items-center gap-3">
+            <div className="w-7 h-7 rounded-[6px] bg-[#080e21] border border-[#1d293d] flex items-center justify-center text-[#00dc82]">
+              <Terminal size={14} className="stroke-[2.5]" />
+            </div>
+            <div>
+              <span className="font-semibold text-sm tracking-tight text-white block">
+                ANAS<span className="text-[#00dc82]">.</span>MOURADI
+              </span>
+              <span className="text-xs text-[#90a1b9] font-mono-code">
+                Full-Stack Software Engineer
+              </span>
+            </div>
           </div>
 
           {/* Quick links */}
-          <div className="flex flex-wrap items-center gap-6 font-mono text-[11px] uppercase tracking-[0.12em] text-zinc-500">
-            <a href="#about" className="hover:text-white transition-colors">
+          <div className="flex flex-wrap items-center gap-6 text-xs font-medium text-[#90a1b9]">
+            <a href="#about" className="hover:text-[#00dc82] transition-colors">
               About
             </a>
-            <a href="#work" className="hover:text-white transition-colors">
-              Work
+            <a href="#toolbox" className="hover:text-[#00dc82] transition-colors">
+              Toolbox
             </a>
-            <a href="#experience" className="hover:text-white transition-colors">
+            <a href="#work" className="hover:text-[#00dc82] transition-colors">
+              Selected Work
+            </a>
+            <a href="#experience" className="hover:text-[#00dc82] transition-colors">
               Experience
             </a>
-            <a href="#contact" className="hover:text-white transition-colors">
+            <a href="#contact" className="hover:text-[#00dc82] transition-colors">
               Contact
             </a>
           </div>
 
           {/* Socials & Back to Top */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <a
               href="https://github.com/anasmouradi"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="flex h-9 w-9 items-center justify-center border border-zinc-800 text-zinc-400 hover:border-violet-500 hover:text-white transition-colors"
+              className="flex h-8 w-8 items-center justify-center rounded-[6px] border border-[#1d293d] bg-[#080e21] text-[#90a1b9] hover:border-[#00dc82] hover:text-[#00dc82] transition-colors"
             >
-              <Github size={15} />
+              <Github size={14} />
             </a>
 
             <a
@@ -61,30 +65,31 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="flex h-9 w-9 items-center justify-center border border-zinc-800 text-zinc-400 hover:border-violet-500 hover:text-white transition-colors"
+              className="flex h-8 w-8 items-center justify-center rounded-[6px] border border-[#1d293d] bg-[#080e21] text-[#90a1b9] hover:border-[#00dc82] hover:text-[#00dc82] transition-colors"
             >
-              <Linkedin size={15} />
+              <Linkedin size={14} />
             </a>
 
             <button
               onClick={scrollToTop}
-              className="flex h-9 w-9 items-center justify-center border border-zinc-800 text-zinc-400 hover:border-violet-500 hover:text-white transition-colors cursor-pointer"
-              title="Back to top"
+              className="flex h-8 w-8 items-center justify-center rounded-[6px] border border-[#1d293d] bg-[#080e21] text-[#90a1b9] hover:border-[#00dc82] hover:text-[#00dc82] transition-colors cursor-pointer"
+              title="Return to top"
             >
-              <ArrowUp size={15} />
+              <ArrowUp size={14} />
             </button>
           </div>
 
         </div>
 
         {/* Sub-footer copyright */}
-        <div className="mt-12 pt-8 border-t border-zinc-900/80 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px] text-zinc-600">
+        <div className="mt-8 pt-6 border-t border-[#1d293d] flex flex-col sm:flex-row items-center justify-between gap-4 font-mono-code text-[11px] text-[#90a1b9]">
           <p>
             © {new Date().getFullYear()} Anas Mouradi. All rights reserved.
           </p>
 
-          <p>
-            Designed &amp; Engineered with Next.js &amp; Tailwind CSS
+          <p className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00dc82]" />
+            <span>Nuxt Terminal Dark Theme · Next.js &amp; Tailwind CSS</span>
           </p>
         </div>
 
